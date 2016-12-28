@@ -7,6 +7,9 @@ var ExchangeRate = {
 	"wall": {
 		"stone": 5,
 		"mortar": 3
+	},
+	"charcoal": {
+		"wood": 1
 	}
 }
 function create(type) {
@@ -25,7 +28,7 @@ function exchange(arrayOfItems, type) {
 	var output = [];
 	var trash = [];
 	var counter = {};
-	console.log("Exchanging stuff in your inventory for a " + type)
+	console.log("Exchanging for a " + type)
 	if (ExchangeRate.hasOwnProperty(type)) {
 		var wantedItems = ExchangeRate[type];
 		for (var wanted in wantedItems) {
