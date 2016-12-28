@@ -1,34 +1,23 @@
 "use strict";
 
-var Stone = require("./stone");
-var Mortar = require("./mortar");
-
-var Wall = require("./wall");
+var items = require('./items')
 var _ = require("lodash");
 
 var ExchangeRate = {
-	"Wall": {
-		"Stone": 5,
-		"Mortar": 3
+	"wall": {
+		"stone": 5,
+		"mortar": 3
 	}
 }
 function create(type) {
 	var item = undefined;
-  	switch(type) {
-  		case "Wall":
-  			item = new Wall();
-  			break;
-  		case "Mortar":
-  			item = new Mortar();
-  			break;
-  		case "Stone":
-  			item = new Stone();
-  			break;
-  }
-  if (item !== undefined) {
-  	item.init();
-  }
-  return item;
+	if (items.hasOwnProperty(type)) {
+		item = new items[type];
+		item.init();
+	} else {
+		console.log("Error: Can't create what doesn't exist");
+	}
+	return item;
 }
 
 

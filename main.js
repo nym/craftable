@@ -13,17 +13,17 @@ setInterval(
 
 var inventory = []
 // 5 stone
-inventory.push(Factory.create("Stone"));
-inventory.push(Factory.create("Stone"));
-inventory.push(Factory.create("Stone"));
-inventory.push(Factory.create("Stone"));
-inventory.push(Factory.create("Stone"));
-inventory.push(Factory.create("Mortar"));
-inventory.push(Factory.create("Mortar"));
-inventory.push(Factory.create("Mortar"));
+inventory.push(Factory.create("stone"));
+inventory.push(Factory.create("stone"));
+inventory.push(Factory.create("stone"));
+inventory.push(Factory.create("stone"));
+inventory.push(Factory.create("stone"));
+inventory.push(Factory.create("mortar"));
+inventory.push(Factory.create("mortar"));
+inventory.push(Factory.create("mortar"));
 
 console.log({"inventory": inventory})
-var newInventory = Factory.exchange(inventory, "Wall");
+var newInventory = Factory.exchange(inventory, "wall");
 
 console.log({"inventory": newInventory});
 console.log("Game over.");

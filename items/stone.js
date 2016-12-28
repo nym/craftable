@@ -1,13 +1,13 @@
 "use strict";
 
-var Item = require("./item");
+var Item = require("../item");
 
 var Stone = function() {
 	var stone = {}
 
 	stone.__proto__ = Item();
 
-	stone.name = "Stone";
+	stone.name = "stone";
 
 	return stone;
 }

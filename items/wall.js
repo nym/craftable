@@ -1,6 +1,6 @@
 "use strict";
 
-var Item = require("./item");
+var Item = require("../item");
 
 var Wall = function() {
 	var wall = {}
