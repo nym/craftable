@@ -3,7 +3,7 @@ var Factory = require("./factory");
 var ms = 0;
 var items = [];
 
-console.log("Start");
+console.log("Craftable Items: " + Factory.list());
 
 setInterval(
 	function() {

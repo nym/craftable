@@ -6,6 +6,10 @@ var _ = require("lodash");
 var ExchangeRate = items.ExchangeRate;
 console.log(ExchangeRate);
 
+function list() {
+	return _.rest(_.keys(items), 1).join(', ');
+}
+
 function create(type) {
 	var item = undefined;
 	if (items.hasOwnProperty(type)) {
@@ -54,5 +58,6 @@ function exchange(arrayOfItems, type) {
 	return output;
 }
 
+module.exports.list = list;
 module.exports.create = create;
 module.exports.exchange = exchange;
