@@ -11,5 +11,6 @@ var Charcoal = function() {
 
 	return charcoal;
 }
+Charcoal.cost = { "wood": 1 };
 
 module.exports = Charcoal;

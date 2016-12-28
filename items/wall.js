@@ -12,4 +12,9 @@ var Wall = function() {
 	return wall;
 }
 
+Wall.cost = {
+	"stone": 5,
+	"mortar": 3
+};
+
 module.exports = Wall;

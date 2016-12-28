@@ -3,15 +3,9 @@
 var items = require('./items')
 var _ = require("lodash");
 
-var ExchangeRate = {
-	"wall": {
-		"stone": 5,
-		"mortar": 3
-	},
-	"charcoal": {
-		"wood": 1
-	}
-}
+var ExchangeRate = items.ExchangeRate;
+console.log(ExchangeRate);
+
 function create(type) {
 	var item = undefined;
 	if (items.hasOwnProperty(type)) {
