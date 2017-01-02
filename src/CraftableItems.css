@@ -1,0 +1,30 @@
+.CraftableItems {
+  text-align: center;
+  display: inline-block;
+
+  padding: 5px;
+  border: 2px solid #ccc;
+  background: #ddd;
+  margin: 5px;
+}
+
+.CraftableItems-header {
+	padding: 5px;
+	border-bottom: 2px solid #999;
+	margin-bottom: 5px;
+}
+
+.CraftableItems-header h2 {
+  font-size: small;
+  padding: 0;
+  margin: 0;
+}
+
+.CraftableItems button {
+  text-align: center;
+  display: inline-block;
+
+  padding: 10px;
+  border: 2px solid #111;
+  margin: 5px;
+}
