@@ -1,16 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import ItemCollection from './ItemCollection';
-import './Wallet.css'
+import './Wallet.css';
 import Factory from './Factory';
+import WalletModel from './WalletModel';
 
 class Wallet extends Component {
   constructor(name) {
     super();
     let f = new Factory();
-    this.inventory = [f.create("Stone"), f.create("Wood"), f.create("Flint")]
-    console.log(this.inventory)
-    this.itemCollections = this.inventory.map((item) => (<ItemCollection key={item.name} name={item.name} quantity={1} />))
+    // memory model for now
+    this.inventory = new WalletModel();
+    this.inventory.addItem(f.create("Stone"));
+    this.inventory.addItem(f.create("Stone"));
+    this.inventory.addItem(f.create("Stone"));
+    this.inventory.addItem(f.create("Stone"));
+    this.inventory.addItem(f.create("Stone"));
+    this.inventory.addItem(f.create("Wood"));
+    this.inventory.addItem(f.create("Flint"));
+    console.log(this.inventory.listItems());
+
+    this.itemCollections = Object.keys(this.inventory.listItems())
   }
   render() {
     return (

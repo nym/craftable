@@ -16,7 +16,7 @@ class ItemCollection extends Component {
   }
 
   quantity() {
-    return this.items.length;
+    return this.props.quantity;
   }
   
   render() {
