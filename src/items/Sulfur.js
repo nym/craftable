@@ -6,7 +6,7 @@ class Sulfur extends Item {
 	}
 
 	created() {
-		console.log("Created sulfur.");
+		super.created("Created sulfur.");
 	}
 
 	destroy() {

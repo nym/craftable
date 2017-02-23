@@ -6,7 +6,7 @@ class Fire extends Item {
 	}
 
 	created() {
-		console.log("It's a fire. You can burn wood in it.");
+		super.created("It's a fire. You can burn wood in it.");
 	}
 
 	destroy() {

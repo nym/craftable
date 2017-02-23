@@ -6,7 +6,7 @@ class Wall extends Item {
 	}
 
 	created() {
-		console.log("It's a wall.");
+		super.created("It's a wall.");
 	}
 
 	destroy() {

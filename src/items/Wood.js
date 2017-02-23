@@ -6,7 +6,7 @@ class Wood extends Item {
 	}
 
 	created() {
-		console.log("It's some wood. Burn it for heat or energy.");
+		super.created("It's some wood. Burn it for heat or energy.");
 	}
 
 	destroy() {

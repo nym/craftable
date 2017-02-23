@@ -6,7 +6,7 @@ class Charcoal extends Item {
 	}
 
 	created() {
-		console.log("Charcoal- it once was wood but then it got burnt.");
+		super.created("Charcoal- it once was wood but then it got burnt.");
 	}
 
 	destroy() {

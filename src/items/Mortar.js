@@ -6,7 +6,7 @@ class Mortar extends Item {
 	}
 
 	created() {
-		console.log("It's mortar. Helps bind stones into a wall.");
+		super.created("It's mortar. Helps bind stones into a wall.");
 	}
 
 	destroy() {

@@ -11,16 +11,30 @@ class Wallet extends Component {
     let f = new Factory();
     // memory model for now
     this.inventory = new WalletModel();
-    this.inventory.addItem(f.create("Stone"));
-    this.inventory.addItem(f.create("Stone"));
-    this.inventory.addItem(f.create("Stone"));
-    this.inventory.addItem(f.create("Stone"));
-    this.inventory.addItem(f.create("Stone"));
-    this.inventory.addItem(f.create("Wood"));
-    this.inventory.addItem(f.create("Flint"));
-    console.log(this.inventory.listItems());
 
-    this.itemCollections = Object.keys(this.inventory.listItems())
+    setTimeout(() => {
+      this.inventory.addItem(f.create("Stone"));
+    }, 1000);
+    setTimeout(() => {
+      this.inventory.addItem(f.create("Stone"));
+    }, 1100);
+        setTimeout(() => {
+      this.inventory.addItem(f.create("Stone"));
+    }, 1200);
+        setTimeout(() => {
+      this.inventory.addItem(f.create("Stone"));
+    }, 1300);
+    setTimeout(() => {
+      this.inventory.addItem(f.create("Wood"));
+    }, 1400);
+    setTimeout(() => {
+      this.inventory.addItem(f.create("Wood"));
+    }, 1500);    
+    setTimeout(() => {
+      this.inventory.addItem(f.create("Flint"));
+    }, 1600);
+
+    this.itemCollections = this.inventory.listItems()
   }
   render() {
     return (
@@ -29,7 +43,7 @@ class Wallet extends Component {
           <h2>Your Items</h2>
         </div>
         <div className="Wallet-contents">
-          {this.itemCollections}
+          {Object.keys(this.itemCollections)}
         </div>
       </div>
     );

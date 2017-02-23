@@ -6,7 +6,7 @@ class Flint extends Item {
 	}
 
 	created() {
-		console.log("It's a bit of flint. Use it to start fires.");
+		super.created("It's a bit of flint. Use it to start fires.");
 	}
 
 	destroy() {

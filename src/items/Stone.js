@@ -6,7 +6,7 @@ class Stone extends Item {
 	}
 
 	created() {
-		console.log("Created a Stone. It's heavy.");
+		super.created("Created a Stone. It's heavy.")
 	}
 
 	destroy() {

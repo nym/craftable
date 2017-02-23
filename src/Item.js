@@ -1,3 +1,5 @@
+import Alert from 'react-s-alert';
+
 class Item {
 	constructor(name) {
     	this.name = name || "Item";
@@ -5,8 +7,14 @@ class Item {
     	this.created();
 	}
 
-	created() {
-		console.log("Created!");
+	created(msg = "Created item.") {
+		Alert.info(msg, {
+	        position: 'top-right',
+	        effect: 'stackslide',
+	        timeout: 'none'
+	    });
+
+		console.log("Created: " + msg);
 	}
 
 	destroy() {

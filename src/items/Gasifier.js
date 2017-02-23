@@ -6,7 +6,7 @@ class Gasifier extends Item {
 	}
 
 	created() {
-		console.log("Created gasifier. It's basically a small engine that runs on wood.");
+		super.created("Created gasifier. It's basically a small engine that runs on wood.");
 	}
 
 	destroy() {
