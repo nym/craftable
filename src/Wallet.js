@@ -1,54 +1,54 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as walletActions from './actions/wallet';
+import CraftableItems from './CraftableItems';
 
-import ItemCollection from './ItemCollection';
+//import ItemCollection from './ItemCollection';
 import './Wallet.css';
-import Factory from './Factory';
-import WalletModel from './WalletModel';
+//import Factory from './Factory';
+//import WalletModel from './WalletModel';
 
 class Wallet extends Component {
-  constructor(name) {
-    super();
-    let f = new Factory();
+  constructor(props) {
+    super(props);
+    //let f = new Factory();
     // memory model for now
-    this.inventory = new WalletModel();
-
-    setTimeout(() => {
-      this.inventory.addItem(f.create("Stone"));
-    }, 1000);
-    setTimeout(() => {
-      this.inventory.addItem(f.create("Stone"));
-    }, 1100);
-        setTimeout(() => {
-      this.inventory.addItem(f.create("Stone"));
-    }, 1200);
-        setTimeout(() => {
-      this.inventory.addItem(f.create("Stone"));
-    }, 1300);
-    setTimeout(() => {
-      this.inventory.addItem(f.create("Wood"));
-    }, 1400);
-    setTimeout(() => {
-      this.inventory.addItem(f.create("Wood"));
-    }, 1500);    
-    setTimeout(() => {
-      this.inventory.addItem(f.create("Flint"));
-    }, 1600);
-
-    this.itemCollections = this.inventory.listItems()
+    //this.inventory = new WalletModel();
+    
+    this.state = {
+    }
   }
+
+
   render() {
+    const items = this.props.wallet.map((item, idx) => {
+        return <li key={idx}>{item}</li>;
+    });
+
     return (
       <div className="Wallet">
         <div className="Wallet-header">
           <h2>Your Items</h2>
         </div>
         <div className="Wallet-contents">
-          {Object.keys(this.itemCollections)}
+          {items}
         </div>
+        <CraftableItems addItem={this.props.actions.addToWallet} />
       </div>
     );
   }
 
 };
 
-export default Wallet;
+function mapStateToProps(state, props) {
+    return {
+        wallet: state.wallet
+    };
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(walletActions, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

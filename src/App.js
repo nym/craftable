@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Wallet from './Wallet';
-import CraftableItems from './CraftableItems';
 import Alert from 'react-s-alert';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
@@ -23,10 +22,8 @@ class App extends Component {
           <h2>Craftable</h2>
         </div>
         <p className="App-intro">
-          Wecome to craftable.
         </p>
         <Wallet />
-        <CraftableItems />
         <Alert stack={{limit: 5}} />
       </div>
     );
