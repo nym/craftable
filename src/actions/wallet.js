@@ -1,8 +1,8 @@
 export const addToWallet = (item) => {
-  console.log('adding item:', item);
+  console.log('adding item:', item[0]);
   return {
       type: 'add',
-      item
+      item: item[0]
   };
 }
 

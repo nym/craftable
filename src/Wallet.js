@@ -22,8 +22,8 @@ class Wallet extends Component {
 
 
   render() {
-    const items = this.props.wallet.map((item, idx) => {
-        return <li key={idx}>{item}</li>;
+    const items = Object.keys(this.props.wallet).map((item) => {
+        return <div key={item}>{item}: {this.props.wallet[item]}</div>;
     });
 
     return (
