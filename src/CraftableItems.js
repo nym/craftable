@@ -8,25 +8,25 @@ import './CraftableItems.css';
 class CraftableItems extends Component {
   constructor(props) {
     super(props);
-    this.onAddItemToWallet = this.onAddItemToWallet.bind(this);
-    this.onCraftItem = this.onCraftItem.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       craftableItems: items
     }
   }
 
-  onAddItemToWallet(item) {
-      this.props.addItem(item);
-      Alert.info("Spawn Item");
-  }
-
-  onCraftItem(item) {
-      Alert.info("Craft Item");
+  handleClick(item, e) {
+      if (e.shiftKey) {
+        this.props.addItem(item);
+        Alert.info("Spawn Item");
+      } else {
+        this.props.craftItem(item);
+        Alert.info("Craft Item");
+      }
   }
 
   render() {
     const itemsArray = Object.entries(this.state.craftableItems).map((item) => (
-      <button alt="poof" key={item} onClick={() => this.onCraftItem(item)} onDoubleClick={() => this.onAddItemToWallet(item)}>
+      <button alt="poof" key={item} onClick={(e) => this.handleClick(item,e)}>
         <strong>{item[0]}</strong><br/>{item[1].cost ? Object.entries(item[1].cost).map((costI) => costI[1] + " " + costI[0]).join(", ") : "n/a" }
       </button>
     ));

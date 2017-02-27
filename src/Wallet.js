@@ -34,7 +34,7 @@ class Wallet extends Component {
         <div className="Wallet-contents">
           {items}
         </div>
-        <CraftableItems addItem={this.props.actions.addToWallet} />
+        <CraftableItems addItem={this.props.actions.addToWallet} craftItem={this.props.actions.craftItem}/>
       </div>
     );
   }

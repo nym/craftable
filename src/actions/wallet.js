@@ -5,3 +5,11 @@ export const addToWallet = (item) => {
       item
   };
 }
+
+export const craftItem = (item) => {
+  console.log('crafting item:', item);
+  return {
+      type: 'craft',
+      item
+  };
+}
